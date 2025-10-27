@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     console.log('📨 Proxying booking request to OVH...')
     console.log('Request body:', body)
 
-    const ovhApiUrl = process.env.OVH_API_URL || 'https://api.telepointspermis.fr'
+    const ovhApiUrl = process.env.OVH_API_URL || 'https://api.twelvy.net'
     const apiKey = process.env.OVH_API_KEY || ''
 
     console.log('🌐 Calling OVH API at:', ovhApiUrl)
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-API-Key': apiKey,
+        'X-Api-Key': apiKey,
       },
       body: JSON.stringify(body),
     })
